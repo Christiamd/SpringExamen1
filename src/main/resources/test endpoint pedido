@@ -1,0 +1,52 @@
+crear pedido asegurarse que el cliente este activo
+curl --location 'http://localhost:8080/pedido/v1/crear/1232345678' \
+--header 'Content-Type: application/json' \
+--data '{
+    "descripcion": "Computadora"
+}'
+
+//TODO IMPLMENTAR LIST DE PEDIDOS EN EL ENDPOINT
+
+MOSTRAR TODOS LOS PEDIDOS
+curl --location --request GET 'http://localhost:8080/pedido/v1' \
+--header 'Content-Type: application/json' \
+--data '[
+    {
+        "descripcion": "Computadora",
+        "estado": "NUEVO"
+    },
+    {
+        "descripcion": "Teléfono Móvil",
+        "estado": "NUEVO"
+    },
+    {
+        "descripcion": "Escritorio",
+        "estado": "NUEVO"
+    }
+]'
+//TODO OCULTAR LOS PEDIDOS ELIMINADOS
+
+PEDIDO POR ID
+curl --location 'http://localhost:8080/pedido/v1/3' \
+--header 'Content-Type: application/json' \
+--data ''
+// TODO OCULTAR ELIMINADOS
+
+PEDIDO POR ESTADO
+curl --location 'http://localhost:8080/pedido/v1/estado/PENDIENTE' \
+--header 'Content-Type: application/json'
+
+PEDIDO POR PERSONA
+curl --location 'http://localhost:8080/pedido/v1/persona/1' \
+--header 'Content-Type: application/json'
+
+ACTUALIZAR PEDIDO
+curl --location --request PUT 'http://localhost:8080/pedido/v1/4' \
+--header 'Content-Type: application/json' \
+--data '{
+  "estado": "ELIMINADO"
+}'
+ELIMINAR PEDIDO
+curl --location --request DELETE 'http://localhost:8080/pedido/v1/4' \
+--header 'Content-Type: application/json' \
+--data ''

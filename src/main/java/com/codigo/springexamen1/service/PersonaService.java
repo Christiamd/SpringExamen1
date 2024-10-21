@@ -2,10 +2,11 @@ package com.codigo.springexamen1.service;
 
 import com.codigo.springexamen1.entity.PersonaEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public interface PersonaService {
     PersonaEntity crearPersona(PersonaEntity Persona);
     List<PersonaEntity> obtenerTodasLasPersonas();

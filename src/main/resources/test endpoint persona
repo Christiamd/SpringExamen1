@@ -1,0 +1,33 @@
+crear persona
+curl --location 'localhost:8080/persona/v1/crearPersona' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic Og==' \
+--data-raw '{
+    "nombre": "Christiam De la Cruz",
+    "num_documento": "71488433",
+    "email": "juan.perez@example.com",
+    "estado": "ACTIVO"
+}'
+
+
+obtener todas las personas
+curl --location --request GET 'localhost:8080/persona/v1/obtenerPersonas' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic Og==' \
+'
+TODO SOLO PERSONAS ACTIVAS
+
+buscar por numero documento
+curl --location 'localhost:8080/persona/v1/71488433' \
+--header 'Authorization: Basic Og==' \
+--data ''
+
+//TODO ACTUALIZAR PERSONA
+
+borrar persona
+curl --location --request DELETE 'localhost:8080/persona/v1/borrar/71488433' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic Og==' \
+'
+
+

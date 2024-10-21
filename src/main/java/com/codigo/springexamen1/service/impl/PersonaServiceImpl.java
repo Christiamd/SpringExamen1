@@ -24,6 +24,7 @@ public class PersonaServiceImpl implements PersonaService {
     @Override
     public PersonaEntity crearPersona(PersonaEntity persona){
         persona.setFecha_creacion(new Timestamp(System.currentTimeMillis()));
+
         try {return personaRepository.save(persona);}catch (PersistenceException e){
             if (e.getCause() != null && e.getCause().getMessage().contains("llave duplicada")) {
                 throw new RuntimeException("Llave duplicada viola restricción de unicidad: " + e.getMessage(), e);
