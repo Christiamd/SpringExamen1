@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface PedidoService {
 
-    PedidoEntity crearPedido(String persona,PedidoEntity pedido);
+    List<PedidoEntity> crearPedido(String persona,List<PedidoEntity> pedido);
     List<PedidoEntity> obtenerTodosLosPedidos();
     Optional<PedidoEntity> obtenerPedidoxId(Long id);
     PedidoEntity actualizarPedido(Long id, PedidoEntity pedidoActualizado);

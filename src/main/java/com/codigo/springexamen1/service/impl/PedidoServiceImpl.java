@@ -25,14 +25,18 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    public PedidoEntity crearPedido(String persona,PedidoEntity pedido) {
+    public List<PedidoEntity> crearPedido(String persona,List<PedidoEntity> pedidos) {
         PersonaEntity personaExistente = personaRepository.findBynumDocumento(persona)
                 .orElseThrow(() -> new NoSuchElementException("Error Cliente no existe"));
 
-        pedido.setPersona(personaExistente);
-        pedido.setFechaCreacion(new Timestamp(System.currentTimeMillis()));
-        pedido.setEstado(EstadoPedido.PENDIENTE);
-        return pedidoRepository.save(pedido);
+        for (PedidoEntity pedido : pedidos) {
+            pedido.setPersona(personaExistente);
+            pedido.setFechaCreacion(new Timestamp(System.currentTimeMillis()));
+            pedido.setEstado(EstadoPedido.PENDIENTE);
+        }
+
+        return pedidoRepository.saveAll(pedidos);
+
     }
 
     @Override

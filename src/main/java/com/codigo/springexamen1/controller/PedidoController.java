@@ -24,8 +24,8 @@ public class PedidoController {
 
     // Crear un nuevo pedido
     @PostMapping("/crear/{persona}")
-    public ResponseEntity<PedidoEntity> crearPedido(@PathVariable String persona,@RequestBody PedidoEntity pedido) {
-        PedidoEntity nuevoPedido = pedidoService.crearPedido(persona,pedido);
+    public ResponseEntity<List<PedidoEntity>> crearPedido(@PathVariable String persona,@RequestBody List<PedidoEntity> pedidos) {
+        List<PedidoEntity> nuevoPedido = pedidoService.crearPedido(persona,pedidos);
         return new ResponseEntity<>(nuevoPedido, HttpStatus.CREATED);
     }
 

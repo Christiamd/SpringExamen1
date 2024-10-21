@@ -1,22 +1,27 @@
 crear pedido asegurarse que el cliente este activo
 curl --location 'http://localhost:8080/pedido/v1/crear/1232345678' \
 --header 'Content-Type: application/json' \
---data '{
-    "descripcion": "Computadora"
-}'
-
-//TODO IMPLMENTAR LIST DE PEDIDOS EN EL ENDPOINT
+--data '[
+    {
+        "descripcion": "Computadora"
+    },
+    {
+        "descripcion": "Teclado"
+    },
+    {
+        "descripcion": "Mouse"
+    }
+]'
 
 MOSTRAR TODOS LOS PEDIDOS
 curl --location --request GET 'http://localhost:8080/pedido/v1' \'
-//TODO OCULTAR LOS PEDIDOS ELIMINADOS
 
-PEDIDO POR ID
+PEDIDO POR ID (MUESTRA ELIMINADOS PARA QUE SE PUEDAN RASTREAR)
 curl --location 'http://localhost:8080/pedido/v1/3' \
 --header 'Content-Type: application/json' \
 --data ''
 
-PEDIDO POR ESTADO
+PEDIDO POR ESTADO (SE PUEDE FILTRAR POR ESTADO ELIMINADO)
 curl --location 'http://localhost:8080/pedido/v1/estado/PENDIENTE' \
 --header 'Content-Type: application/json'
 
