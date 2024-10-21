@@ -65,7 +65,7 @@ public class PersonaServiceImpl implements PersonaService {
         personaActualizad.setNum_documento(personaObtenida.getNum_documento());
         if(personaActualizad.getPedidos()==null) personaActualizad.setPedidos(personaObtenida.getPedidos());
 
-        return personaRepository.save(personaActualizad);
+        return personaRepository.save(personaObtenida);
 
     }
 
