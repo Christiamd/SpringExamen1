@@ -16,5 +16,5 @@ public interface PedidoService {
     PedidoEntity actualizarPedido(Long id, PedidoEntity pedidoActualizado);
     void deletePedido(Long id);
     List<PedidoEntity> getPedidosByEstado(EstadoPedido estado);
-    List<PedidoEntity> getPedidosByPersonaId(Long personaId);
+    List<PedidoEntity> getPedidosByPersonaNroDoc(String personaNroDoc);
 }

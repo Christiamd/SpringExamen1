@@ -37,7 +37,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public List<PedidoEntity> obtenerTodosLosPedidos() {
-        return pedidoRepository.findAll();
+        return pedidoRepository.findPedidoActivo();
     }
 
     @Override
@@ -85,7 +85,7 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    public List<PedidoEntity> getPedidosByPersonaId(Long personaId) {
-        return pedidoRepository.findByPersonaId(personaId);
+    public List<PedidoEntity> getPedidosByPersonaNroDoc(String personaNroDoc) {
+        return pedidoRepository.findByPersonaNroDoc(personaNroDoc);
     }
 }

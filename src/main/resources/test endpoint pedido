@@ -15,15 +15,13 @@ PEDIDO POR ID
 curl --location 'http://localhost:8080/pedido/v1/3' \
 --header 'Content-Type: application/json' \
 --data ''
-// TODO OCULTAR ELIMINADOS
 
 PEDIDO POR ESTADO
 curl --location 'http://localhost:8080/pedido/v1/estado/PENDIENTE' \
 --header 'Content-Type: application/json'
 
-PEDIDO POR PERSONA
-curl --location 'http://localhost:8080/pedido/v1/persona/1' \
---header 'Content-Type: application/json'
+PEDIDO POR PERSONA(busca por ducumento de persona no por el id de persona)
+curl --location 'http://localhost:8080/pedido/v1/persona/1232345678'
 
 ACTUALIZAR PEDIDO
 curl --location --request PUT 'http://localhost:8080/pedido/v1/4' \

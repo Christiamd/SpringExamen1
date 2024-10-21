@@ -66,9 +66,10 @@ public class PedidoController {
     }
 
     // Obtener pedidos por ID de persona
-    @GetMapping("/persona/{personaId}")
-    public ResponseEntity<List<PedidoEntity>> obtenerPedidosPorPersonaId(@PathVariable Long personaId) {
-        List<PedidoEntity> pedidos = pedidoService.getPedidosByPersonaId(personaId);
+    @GetMapping("/persona/{personaNroDoc}")
+    public ResponseEntity<List<PedidoEntity>> obtenerPedidosPorPersonaId(@PathVariable String personaNroDoc) {
+        List<PedidoEntity> pedidos = pedidoService.getPedidosByPersonaNroDoc(personaNroDoc);
+        if(pedidos.isEmpty())return new ResponseEntity<>(pedidos,HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(pedidos, HttpStatus.OK);
     }
 }
