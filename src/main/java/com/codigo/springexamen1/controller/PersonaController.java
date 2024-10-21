@@ -39,5 +39,10 @@ public class PersonaController {
     public ResponseEntity<String> borrarPersona(@PathVariable String documento){
         return personaService.eliminarPersona(documento);
     }
+    @PutMapping("actualiza/{documento}")
+    public ResponseEntity<PersonaEntity> actualizaPersona(@PathVariable String documento,
+                                                          @RequestBody PersonaEntity personaActualiz){
+        return new ResponseEntity<>(personaService.actualizarPersona(documento,personaActualiz), HttpStatus.CREATED);
+    }
 
 }
