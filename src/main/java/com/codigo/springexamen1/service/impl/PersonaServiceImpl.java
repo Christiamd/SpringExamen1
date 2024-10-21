@@ -61,6 +61,7 @@ public class PersonaServiceImpl implements PersonaService {
                 .orElseThrow(() -> new NoSuchElementException("Error Cliente no existe"));
         personaActualizad.setFecha_creacion(personaObtenida.getFecha_creacion());
         if(personaActualizad.getDireccionEntity() == null) personaActualizad.setDireccionEntity(personaObtenida.getDireccionEntity());
+        if(personaActualizad.getNombre()==null )personaActualizad.setNombre(personaObtenida.getNombre());
         personaActualizad.setNum_documento(personaObtenida.getNum_documento());
         if(personaActualizad.getPedidos()==null) personaActualizad.setPedidos(personaObtenida.getPedidos());
 
