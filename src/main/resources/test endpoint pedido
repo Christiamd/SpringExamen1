@@ -8,22 +8,7 @@ curl --location 'http://localhost:8080/pedido/v1/crear/1232345678' \
 //TODO IMPLMENTAR LIST DE PEDIDOS EN EL ENDPOINT
 
 MOSTRAR TODOS LOS PEDIDOS
-curl --location --request GET 'http://localhost:8080/pedido/v1' \
---header 'Content-Type: application/json' \
---data '[
-    {
-        "descripcion": "Computadora",
-        "estado": "NUEVO"
-    },
-    {
-        "descripcion": "Teléfono Móvil",
-        "estado": "NUEVO"
-    },
-    {
-        "descripcion": "Escritorio",
-        "estado": "NUEVO"
-    }
-]'
+curl --location --request GET 'http://localhost:8080/pedido/v1' \'
 //TODO OCULTAR LOS PEDIDOS ELIMINADOS
 
 PEDIDO POR ID

@@ -15,7 +15,6 @@ curl --location --request GET 'localhost:8080/persona/v1/obtenerPersonas' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Basic Og==' \
 '
-TODO SOLO PERSONAS ACTIVAS
 
 buscar por numero documento
 curl --location 'localhost:8080/persona/v1/71488433' \

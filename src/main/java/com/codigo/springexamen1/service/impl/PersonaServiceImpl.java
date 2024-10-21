@@ -36,7 +36,7 @@ public class PersonaServiceImpl implements PersonaService {
     }
     @Override
     public List<PersonaEntity> obtenerTodasLasPersonas() {
-        return personaRepository.findAll();
+        return personaRepository.findActivos();
     }
     @Override
     public Optional<PersonaEntity> buscarPersonaxNumDocumento(String documento) {
