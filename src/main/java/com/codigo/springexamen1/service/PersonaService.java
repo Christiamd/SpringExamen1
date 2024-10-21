@@ -16,10 +16,9 @@ public interface PersonaService {
 
 
 
-    /*
-    PersonaEntity actualizarPersona(Long id, PersonaEntity Persona);
-    public PersonaEntity findBynum_documento(String documento);
-    */
+
+    PersonaEntity actualizarPersona(String numDocumento, PersonaEntity Persona);
+
 
 
 }

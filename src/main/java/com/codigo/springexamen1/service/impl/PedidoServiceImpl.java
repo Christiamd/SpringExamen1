@@ -1,10 +1,11 @@
-package com.codigo.springexamen1.service;
+package com.codigo.springexamen1.service.impl;
 
 import com.codigo.springexamen1.entity.EstadoPedido;
 import com.codigo.springexamen1.entity.PedidoEntity;
 import com.codigo.springexamen1.entity.PersonaEntity;
 import com.codigo.springexamen1.repository.PedidoRepository;
 import com.codigo.springexamen1.repository.PersonaRepository;
+import com.codigo.springexamen1.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

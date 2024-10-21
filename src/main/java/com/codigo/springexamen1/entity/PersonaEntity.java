@@ -36,11 +36,11 @@ public class PersonaEntity {
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
     private List<PedidoEntity> pedidos;
 
-    /*
+
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH})
     @JoinColumn(name = "direccion_id", referencedColumnName = "id")
     private DireccionEntity direccionEntity;
-    */
+
 
 
 }

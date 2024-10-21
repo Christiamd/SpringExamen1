@@ -11,6 +11,7 @@ import com.codigo.springexamen1.service.PersonaService;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -52,6 +53,19 @@ public class PersonaServiceImpl implements PersonaService {
         personaObtenida.setFecha_anulacion(new Timestamp(System.currentTimeMillis()));
         personaRepository.save(personaObtenida);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build(); // Devolver 204 No Content
+    }
+
+    @Override
+    public PersonaEntity actualizarPersona(String numDocumento, PersonaEntity personaActualizad) {
+        PersonaEntity personaObtenida =  buscarPersonaxNumDocumento(numDocumento)
+                .orElseThrow(() -> new NoSuchElementException("Error Cliente no existe"));
+
+        if(personaActualizad.getDireccionEntity() == null) personaActualizad.setDireccionEntity(personaObtenida.getDireccionEntity());
+        personaActualizad.setNum_documento(personaObtenida.getNum_documento());
+        if(personaActualizad.getPedidos()==null) personaActualizad.setPedidos(personaObtenida.getPedidos());
+
+        return personaRepository.save(personaActualizad);
+
     }
 
 
